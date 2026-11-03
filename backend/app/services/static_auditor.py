@@ -32,18 +32,20 @@ TEXT_EXTENSIONS = SOURCE_EXTENSIONS | {
     ".toml", ".ini", ".xml", ".sh", ".bat",
 }
 
+
 SECRET_PATTERNS = {
     "private_key": re.compile(
         r"-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----"
     ),
     "aws_access_key": re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
     "api_key": re.compile(
-        r"""(?i)(?:api[_-]?key|access[_-]?token)\s*[:=]\s*["'][^"']{12,}["']"""
+        r"""(?i)\b(?:api[_-]?key|access[_-]?token)\s*[:=]\s*["'][^"']{12,}["']"""
     ),
-"hardcoded_password": re.compile(
-    r"""(?i)(?:password|passwd|secret)\s*[:=]\s*["'](?!.*(?:getpass|input)\s*\()[^"']{4,}["']"""
-),
+    "hardcoded_password": re.compile(
+        r"""(?i)\b(?:password|passwd|secret)\s*[:=]\s*["']([^"']{4,})["']"""
+    ),
 }
+
 
 
 def safe_path(name: str) -> bool:

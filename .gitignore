@@ -26,3 +26,7 @@ logs/*
 .idea/
 .DS_Store
 Thumbs.db
+
+# Backend runtime uploads
+/backend/uploads/*
+!/backend/uploads/.gitkeep

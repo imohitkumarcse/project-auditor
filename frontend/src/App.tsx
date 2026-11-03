@@ -151,10 +151,47 @@ function App() {
     }
   }, [])
 
-  useEffect(() => {
-    void loadData()
-  }, [loadData])
+useEffect(() => {
+  let active = true
 
+  const refresh = async () => {
+    try {
+      const [healthResponse, projectsResponse] = await Promise.all([
+        fetch(`${API}/api/health`),
+        fetch(`${API}/api/projects/`),
+      ])
+
+      if (!healthResponse.ok || !projectsResponse.ok) {
+        throw new Error('Backend request failed')
+      }
+
+      const healthData: Health = await healthResponse.json()
+      const projectData = await projectsResponse.json()
+      const list: Project[] = Array.isArray(projectData)
+        ? projectData
+        : projectData.projects ?? projectData.results ?? []
+
+      if (!active) return
+
+      setHealth(healthData)
+      setProjects(list)
+      setError('')
+    } catch {
+      if (!active) return
+
+      setHealth({})
+      setError('Cannot connect to the backend. Start FastAPI on port 8000.')
+    } finally {
+      if (active) setLoading(false)
+    }
+  }
+
+  void refresh()
+
+  return () => {
+    active = false
+  }
+}, [])
   const uploadFiles = async (files: FileList | File[]) => {
     const zipFiles = Array.from(files).filter(file =>
       file.name.toLowerCase().endsWith('.zip'),
