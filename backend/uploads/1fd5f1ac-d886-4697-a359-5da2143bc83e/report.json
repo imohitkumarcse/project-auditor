@@ -1,0 +1,73 @@
+{
+    "project_id": "1fd5f1ac-d886-4697-a359-5da2143bc83e",
+    "filename": "test-project.zip",
+    "file_size_bytes": 330,
+    "status": "analyzed",
+    "file_count": 2,
+    "uncompressed_size_bytes": 112,
+    "languages": {
+        "JavaScript": 1
+    },
+    "frameworks": [
+        "React",
+        "Vite"
+    ],
+    "manifests": [
+        "package.json"
+    ],
+    "project_roots": [
+        "."
+    ],
+    "category": "Web Application",
+    "suspicious_entries": [],
+    "execution_performed": false,
+    "audit_status": "completed",
+    "audit_score": 87,
+    "scores": {
+        "security": 90,
+        "code_quality": 100,
+        "completeness": 70
+    },
+    "metrics": {
+        "files_scanned": 2,
+        "source_files": 1,
+        "empty_files": 0,
+        "large_files": 0,
+        "todo_count": 0,
+        "fixme_count": 0,
+        "test_files": 0,
+        "documentation_files": 0,
+        "manifest_files": 1,
+        "lockfiles": 0,
+        "env_files": 0
+    },
+    "file_extensions": {
+        ".jsx": 1
+    },
+    "finding_summary": {
+        "medium": 2,
+        "low": 1
+    },
+    "findings": [
+        {
+            "type": "missing_readme",
+            "severity": "medium",
+            "message": "No README file found."
+        },
+        {
+            "type": "missing_tests",
+            "severity": "medium",
+            "message": "No recognizable test or spec source files found."
+        },
+        {
+            "type": "missing_lockfile",
+            "severity": "low",
+            "message": "No recognized dependency lockfile found."
+        }
+    ],
+    "scan_limits": {
+        "max_file_size_bytes": 1048576,
+        "max_total_scan_size_bytes": 20971520,
+        "bytes_scanned": 112
+    }
+}

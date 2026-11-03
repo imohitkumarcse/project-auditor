@@ -1,0 +1,223 @@
+{
+    "project_id": "3160d38d-fded-43fe-bdff-35ab179b7b98",
+    "filename": "AI-Study-Assistant.zip",
+    "file_size_bytes": 3223546,
+    "status": "analyzed",
+    "file_count": 95,
+    "uncompressed_size_bytes": 3729350,
+    "languages": {
+        "Python": 23,
+        "TypeScript": 16,
+        "HTML": 2,
+        "CSS": 1
+    },
+    "frameworks": [
+        "ChromaDB",
+        "FastAPI",
+        "Hugging Face Transformers",
+        "React",
+        "Vite"
+    ],
+    "manifests": [
+        "package.json",
+        "requirements.txt"
+    ],
+    "project_roots": [
+        "ai-study-assistant/backend",
+        "ai-study-assistant/frontend"
+    ],
+    "category": "AI / ML",
+    "suspicious_entries": [],
+    "execution_performed": false,
+    "audit_status": "completed",
+    "audit_score": 93,
+    "scores": {
+        "security": 100,
+        "code_quality": 78,
+        "completeness": 100
+    },
+    "metrics": {
+        "files_scanned": 48,
+        "source_files": 35,
+        "empty_files": 11,
+        "large_files": 0,
+        "todo_count": 0,
+        "fixme_count": 0,
+        "test_files": 3,
+        "documentation_files": 2,
+        "manifest_files": 2,
+        "lockfiles": 1,
+        "env_files": 0
+    },
+    "file_extensions": {
+        ".py": 16,
+        ".html": 2,
+        ".tsx": 13,
+        ".ts": 3,
+        ".css": 1
+    },
+    "finding_summary": {
+        "low": 11
+    },
+    "findings": [
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/ai-training/data/processed/.gitkeep",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/ai-training/data/raw/.gitkeep",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/ai-training/models/.gitkeep",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/ai-training/outputs/.gitkeep",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/api/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/core/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/db/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/models/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/schemas/__init__.py",
+            "message": "Empty file detected."
+        },
+        {
+            "type": "empty_file",
+            "severity": "low",
+            "file": "ai-study-assistant/backend/app/services/__init__.py",
+            "message": "Empty file detected."
+        }
+    ],
+    "scan_limits": {
+        "max_file_size_bytes": 1048576,
+        "max_total_scan_size_bytes": 20971520,
+        "bytes_scanned": 471019
+    },
+    "ai_audit": {
+        "status": "completed",
+        "summary": "AI review completed. See the architecture review and verified findings.",
+        "architecture_review": {
+            "overview": "Not verified from the reviewed source files.",
+            "entry_points": "Not verified from the reviewed source files.",
+            "components": "Not verified from the reviewed source files.",
+            "data_flow": "Not verified from the reviewed source files.",
+            "dependencies": "Not verified from the reviewed source files.",
+            "security": "Not verified from the reviewed source files."
+        },
+        "strengths": [],
+        "limitations": [],
+        "findings": [],
+        "files_reviewed": [
+            {
+                "path": "ai-study-assistant/backend/app/api/routes.py",
+                "line_count": 591
+            },
+            {
+                "path": "ai-study-assistant/backend/requirements.txt",
+                "line_count": 12
+            },
+            {
+                "path": "ai-study-assistant/frontend/package.json",
+                "line_count": 34
+            },
+            {
+                "path": "ai-study-assistant/ai-training/README.md",
+                "line_count": 25
+            },
+            {
+                "path": "ai-study-assistant/README.md",
+                "line_count": 165
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/types/index.ts",
+                "line_count": 77
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/main.tsx",
+                "line_count": 68
+            },
+            {
+                "path": "ai-study-assistant/backend/app/main.py",
+                "line_count": 175
+            },
+            {
+                "path": "ai-study-assistant/frontend/tsconfig.json",
+                "line_count": 1
+            },
+            {
+                "path": "ai-study-assistant/frontend/vite.config.ts",
+                "line_count": 13
+            },
+            {
+                "path": "ai-study-assistant/backend/app/db/session.py",
+                "line_count": 21
+            },
+            {
+                "path": "ai-study-assistant/backend/app/core/config.py",
+                "line_count": 38
+            },
+            {
+                "path": "ai-study-assistant/backend/app/core/security.py",
+                "line_count": 46
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/features/Auth.tsx",
+                "line_count": 160
+            },
+            {
+                "path": "ai-study-assistant/backend/app/services/ollama.py",
+                "line_count": 108
+            },
+            {
+                "path": "ai-study-assistant/backend/app/schemas/contracts.py",
+                "line_count": 130
+            },
+            {
+                "path": "ai-study-assistant/backend/app/models/entities.py",
+                "line_count": 57
+            }
+        ],
+        "files_reviewed_count": 17,
+        "evidence_policy": "AI findings are included only when their quoted source evidence matches the reviewed file and line range."
+    },
+    "ai_audit_status": "completed"
+}

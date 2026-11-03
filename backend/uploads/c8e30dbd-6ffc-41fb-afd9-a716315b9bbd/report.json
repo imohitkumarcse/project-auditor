@@ -1,0 +1,149 @@
+{
+    "project_id": "c8e30dbd-6ffc-41fb-afd9-a716315b9bbd",
+    "filename": "CyberRisk-Compass.zip",
+    "file_size_bytes": 100699,
+    "status": "analyzed",
+    "file_count": 71,
+    "uncompressed_size_bytes": 342046,
+    "languages": {
+        "Python": 26,
+        "TypeScript": 5,
+        "SQL": 2,
+        "CSS": 1
+    },
+    "frameworks": [
+        "FastAPI",
+        "Next.js",
+        "React"
+    ],
+    "manifests": [
+        "package.json",
+        "requirements.txt"
+    ],
+    "project_roots": [
+        "cyberrisk-compass/backend",
+        "cyberrisk-compass/frontend"
+    ],
+    "category": "Web Application",
+    "suspicious_entries": [],
+    "execution_performed": false,
+    "audit_status": "completed",
+    "audit_score": 88,
+    "scores": {
+        "security": 70,
+        "code_quality": 100,
+        "completeness": 100
+    },
+    "metrics": {
+        "files_scanned": 54,
+        "source_files": 34,
+        "empty_files": 0,
+        "large_files": 0,
+        "todo_count": 0,
+        "fixme_count": 0,
+        "test_files": 7,
+        "documentation_files": 1,
+        "manifest_files": 2,
+        "lockfiles": 1,
+        "env_files": 0
+    },
+    "file_extensions": {
+        ".py": 26,
+        ".sql": 2,
+        ".css": 1,
+        ".tsx": 2,
+        ".ts": 3
+    },
+    "finding_summary": {
+        "high": 2
+    },
+    "findings": [
+        {
+            "type": "possible_secret",
+            "severity": "high",
+            "file": "cyberrisk-compass/backend/tests/conftest.py",
+            "line": 31,
+            "message": "Possible hardcoded password pattern detected. Verify manually; this may be a false positive."
+        },
+        {
+            "type": "possible_secret",
+            "severity": "high",
+            "file": "cyberrisk-compass/backend/tests/test_api.py",
+            "line": 564,
+            "message": "Possible hardcoded password pattern detected. Verify manually; this may be a false positive."
+        }
+    ],
+    "scan_limits": {
+        "max_file_size_bytes": 1048576,
+        "max_total_scan_size_bytes": 20971520,
+        "bytes_scanned": 324741
+    },
+    "ai_audit": {
+        "status": "completed",
+        "summary": "AI review completed. See the architecture review and verified findings.",
+        "architecture_review": {
+            "overview": "Not verified from the reviewed source files.",
+            "entry_points": "Not verified from the reviewed source files.",
+            "components": "Not verified from the reviewed source files.",
+            "data_flow": "Not verified from the reviewed source files.",
+            "dependencies": "Not verified from the reviewed source files.",
+            "security": "Not verified from the reviewed source files."
+        },
+        "strengths": [],
+        "limitations": [],
+        "findings": [],
+        "files_reviewed": [
+            {
+                "path": "cyberrisk-compass/backend/requirements.txt",
+                "line_count": 9
+            },
+            {
+                "path": "cyberrisk-compass/frontend/package.json",
+                "line_count": 24
+            },
+            {
+                "path": "cyberrisk-compass/README.md",
+                "line_count": 152
+            },
+            {
+                "path": "cyberrisk-compass/backend/app/main.py",
+                "line_count": 848
+            },
+            {
+                "path": "cyberrisk-compass/backend/tests/test_config.py",
+                "line_count": 28
+            },
+            {
+                "path": "cyberrisk-compass/frontend/tsconfig.json",
+                "line_count": 33
+            },
+            {
+                "path": "cyberrisk-compass/frontend/next.config.ts",
+                "line_count": 26
+            },
+            {
+                "path": "cyberrisk-compass/backend/app/config.py",
+                "line_count": 51
+            },
+            {
+                "path": "cyberrisk-compass/backend/app/auth.py",
+                "line_count": 73
+            },
+            {
+                "path": "cyberrisk-compass/backend/app/schemas.py",
+                "line_count": 117
+            },
+            {
+                "path": "cyberrisk-compass/backend/app/services.py",
+                "line_count": 120
+            },
+            {
+                "path": "cyberrisk-compass/backend/schema-sqlite.sql",
+                "line_count": 231
+            }
+        ],
+        "files_reviewed_count": 12,
+        "evidence_policy": "AI findings are included only when their quoted source evidence matches the reviewed file and line range."
+    },
+    "ai_audit_status": "completed"
+}

@@ -1,0 +1,176 @@
+{
+    "project_id": "872b67b7-fa14-46db-b512-886d138ea9a1",
+    "filename": "AI-Study-Assistant.zip",
+    "file_size_bytes": 3223546,
+    "status": "analyzed",
+    "file_count": 95,
+    "uncompressed_size_bytes": 3729350,
+    "languages": {
+        "Python": 23,
+        "TypeScript": 16,
+        "HTML": 2,
+        "CSS": 1
+    },
+    "frameworks": [
+        "ChromaDB",
+        "FastAPI",
+        "Hugging Face Transformers",
+        "React",
+        "Vite"
+    ],
+    "manifests": [
+        "package.json",
+        "requirements.txt"
+    ],
+    "project_roots": [
+        "ai-study-assistant/backend",
+        "ai-study-assistant/frontend"
+    ],
+    "category": "AI / ML",
+    "suspicious_entries": [],
+    "execution_performed": false,
+    "audit_status": "completed",
+    "audit_score": 94,
+    "scores": {
+        "security": 85,
+        "code_quality": 100,
+        "completeness": 100
+    },
+    "metrics": {
+        "total_files": 95,
+        "source_files": 35,
+        "text_files_scanned": 48,
+        "empty_files": 0,
+        "large_files": 0,
+        "todo_count": 0,
+        "fixme_count": 0,
+        "files_skipped": 0,
+        "scanned_size_bytes": 471019
+    },
+    "file_extensions": {
+        ".png": 30,
+        ".py": 23,
+        ".tsx": 13,
+        ".md": 6,
+        "[no extension]": 5,
+        ".json": 4,
+        ".txt": 3,
+        ".ts": 3,
+        ".example": 2,
+        ".html": 2,
+        ".jsonl": 1,
+        ".css": 1,
+        ".mjs": 1,
+        ".pdf": 1
+    },
+    "finding_summary": {
+        "total": 1,
+        "critical": 0,
+        "high": 1,
+        "medium": 0,
+        "low": 0,
+        "info": 0
+    },
+    "findings": [
+        {
+            "type": "possible_secret",
+            "severity": "high",
+            "title": "Possible hardcoded secret",
+            "description": "A pattern resembling hardcoded password was detected. Verify it manually and rotate it if genuine.",
+            "file": "ai-study-assistant/ai-training/scripts/evaluate.py"
+        }
+    ],
+    "scan_limits": {
+        "max_file_size_bytes": 1048576,
+        "max_total_scan_size_bytes": 20971520,
+        "max_archive_entries": 20000
+    },
+    "ai_audit": {
+        "status": "completed",
+        "summary": "AI review completed. See the architecture review and verified findings.",
+        "architecture_review": {
+            "overview": "Frontend indicators detected: ai-study-assistant/frontend/src/main.tsx: react, ai-study-assistant/frontend/src/main.tsx: createroot, ai-study-assistant/frontend/src/main.tsx: reactdom, HTML application entry point, ai-study-assistant/frontend/src/features/Auth.tsx: react, ai-study-assistant/frontend/src/features/Auth.tsx: usestate, ai-study-assistant/frontend/package.json: react, ai-study-assistant/frontend/src/lib/state.tsx: react, ai-study-assistant/frontend/src/lib/state.tsx: usestate, ai-study-assistant/frontend/src/lib/state.tsx: useeffect\nBackend indicators detected: ai-study-assistant/backend/app/main.py: fastapi, ai-study-assistant/backend/app/api/routes.py: fastapi, ai-study-assistant/backend/app/api/routes.py: apirouter, ai-study-assistant/backend/requirements.txt: fastapi, ai-study-assistant/backend/requirements.txt: uvicorn, ai-study-assistant/frontend/src/lib/api.ts: fastapi, ai-study-assistant/backend/app/services/ollama.py: fastapi, ai-study-assistant/backend/app/services/documents.py: fastapi",
+            "entry_points": "Detected entry points:\n- ai-study-assistant/backend/app/main.py\n- ai-study-assistant/frontend/index.html",
+            "components": "Detected components:\n- ai-study-assistant/frontend/src/main.tsx: Protected\n- ai-study-assistant/frontend/src/main.tsx: App\n- ai-study-assistant/backend/app/api/routes.py\n- ai-study-assistant/frontend/src/features/Auth.tsx: Auth\n- ai-study-assistant/frontend/src/features/Auth.tsx: default export\n- ai-study-assistant/frontend/src/lib/state.tsx: AppContext\n- ai-study-assistant/frontend/src/lib/state.tsx: AppProvider\n- ai-study-assistant/backend/app/services/ollama.py\n- ai-study-assistant/backend/app/models/entities.py\n- ai-study-assistant/backend/app/services/documents.py",
+            "data_flow": "Observed API route declarations:\n- ai-study-assistant/backend/app/main.py: app.include_router(router)\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/auth/register\", status_code=201)\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/auth/login\")\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/auth/logout\", status_code=204)\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/auth/me\")\n- ai-study-assistant/backend/app/api/routes.py: @router.patch(\"/auth/me\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/health\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/health/ai\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/dashboard\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/conversations\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/conversations/{id}\")\n- ai-study-assistant/backend/app/api/routes.py: @router.delete(\"/conversations/{id}\", status_code=204)\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/chat\")\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/documents/upload\", status_code=201)\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/documents\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/documents/{id}\")\n- ai-study-assistant/backend/app/api/routes.py: @router.get(\"/documents/{id}/file\")\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/documents/{id}/index\")\n- ai-study-assistant/backend/app/api/routes.py: @router.delete(\"/documents/{id}\", status_code=204)\n- ai-study-assistant/backend/app/api/routes.py: @router.post(\"/documents/{id}/ask\")\n\nDatabase indicators:\n- ai-study-assistant/backend/app/main.py: sqlalchemy\n- ai-study-assistant/backend/app/main.py: db.session\n- ai-study-assistant/backend/app/api/routes.py: sqlalchemy\n- ai-study-assistant/backend/app/api/routes.py: db.session\n- ai-study-assistant/backend/app/models/entities.py: sqlalchemy\n- ai-study-assistant/backend/app/models/entities.py: db.session\n- ai-study-assistant/backend/app/models/entities.py: mapped_column(\n\nThe end-to-end runtime data flow was not independently verified.",
+            "dependencies": "Detected dependencies:\n- ai-study-assistant/backend/requirements.txt: fastapi>=0.115,<1\n- ai-study-assistant/backend/requirements.txt: uvicorn[standard]>=0.30,<1\n- ai-study-assistant/backend/requirements.txt: SQLAlchemy>=2.0,<3\n- ai-study-assistant/backend/requirements.txt: pydantic-settings>=2.6,<3\n- ai-study-assistant/backend/requirements.txt: python-multipart>=0.0.18,<1\n- ai-study-assistant/backend/requirements.txt: argon2-cffi>=23.1,<26\n- ai-study-assistant/backend/requirements.txt: httpx>=0.27,<1\n- ai-study-assistant/backend/requirements.txt: PyMuPDF>=1.24,<2\n- ai-study-assistant/backend/requirements.txt: email-validator>=2.2,<3\n- ai-study-assistant/backend/requirements.txt: sentence-transformers>=3.3,<6\n- ai-study-assistant/backend/requirements.txt: chromadb>=0.5,<2\n- ai-study-assistant/backend/requirements.txt: pytest>=8,<10\n- ai-study-assistant/frontend/package.json: lucide-react ^0.468.0\n- ai-study-assistant/frontend/package.json: react ^19.0.0\n- ai-study-assistant/frontend/package.json: react-dom ^19.0.0\n- ai-study-assistant/frontend/package.json: react-markdown ^9.0.0\n- ai-study-assistant/frontend/package.json: react-router-dom ^7.1.0\n- ai-study-assistant/frontend/package.json: remark-gfm ^4.0.0\n- ai-study-assistant/frontend/package.json: @tailwindcss/vite ^4.0.0\n- ai-study-assistant/frontend/package.json: @types/react ^19.0.0",
+            "security": "Detected security-related indicators:\n- ai-study-assistant/backend/app/main.py: cors\n- ai-study-assistant/backend/app/main.py: middleware\n- ai-study-assistant/backend/app/api/routes.py: password_hash\n- ai-study-assistant/backend/app/api/routes.py: verify_password\n- ai-study-assistant/backend/requirements.txt: argon2\n- ai-study-assistant/backend/app/models/entities.py: password_hash"
+        },
+        "strengths": [],
+        "limitations": [],
+        "findings": [],
+        "files_reviewed": [
+            {
+                "path": "ai-study-assistant/frontend/src/types/index.ts",
+                "line_count": 77
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/main.tsx",
+                "line_count": 68
+            },
+            {
+                "path": "ai-study-assistant/backend/app/main.py",
+                "line_count": 175
+            },
+            {
+                "path": "ai-study-assistant/backend/app/api/routes.py",
+                "line_count": 591
+            },
+            {
+                "path": "ai-study-assistant/frontend/index.html",
+                "line_count": 1
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/features/Auth.tsx",
+                "line_count": 160
+            },
+            {
+                "path": "ai-study-assistant/backend/requirements.txt",
+                "line_count": 12
+            },
+            {
+                "path": "ai-study-assistant/frontend/package.json",
+                "line_count": 34
+            },
+            {
+                "path": "ai-study-assistant/ai-training/scripts/prepare_embeddings.py",
+                "line_count": 12
+            },
+            {
+                "path": "ai-study-assistant/ai-training/scripts/validate_dataset.py",
+                "line_count": 39
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/lib/api.ts",
+                "line_count": 74
+            },
+            {
+                "path": "ai-study-assistant/frontend/src/lib/state.tsx",
+                "line_count": 112
+            },
+            {
+                "path": "ai-study-assistant/ai-training/scripts/evaluate.py",
+                "line_count": 82
+            },
+            {
+                "path": "ai-study-assistant/backend/app/services/ollama.py",
+                "line_count": 108
+            },
+            {
+                "path": "ai-study-assistant/backend/app/schemas/contracts.py",
+                "line_count": 130
+            },
+            {
+                "path": "ai-study-assistant/backend/app/models/entities.py",
+                "line_count": 108
+            },
+            {
+                "path": "ai-study-assistant/backend/app/services/documents.py",
+                "line_count": 98
+            }
+        ],
+        "files_reviewed_count": 17,
+        "evidence_policy": "AI findings are included only when their quoted source evidence matches the reviewed file and line range."
+    },
+    "ai_audit_status": "completed"
+}

@@ -1,0 +1,113 @@
+{
+    "project_id": "cc9e669b-28d8-45f1-add0-ad199d47a1b5",
+    "filename": "Indira-Bhawan-OS-MVP.zip",
+    "file_size_bytes": 34587,
+    "status": "analyzed",
+    "file_count": 20,
+    "uncompressed_size_bytes": 90021,
+    "languages": {
+        "HTML": 1,
+        "CSS": 1,
+        "JavaScript": 1
+    },
+    "frameworks": [],
+    "manifests": [
+        "package.json"
+    ],
+    "project_roots": [
+        "indira-bhawan-os"
+    ],
+    "category": "Software Development",
+    "suspicious_entries": [],
+    "execution_performed": false,
+    "audit_status": "completed",
+    "audit_score": 94,
+    "scores": {
+        "security": 95,
+        "code_quality": 100,
+        "completeness": 85
+    },
+    "metrics": {
+        "files_scanned": 8,
+        "source_files": 3,
+        "empty_files": 0,
+        "large_files": 0,
+        "todo_count": 0,
+        "fixme_count": 0,
+        "test_files": 0,
+        "documentation_files": 1,
+        "manifest_files": 1,
+        "lockfiles": 0,
+        "env_files": 0
+    },
+    "file_extensions": {
+        ".html": 1,
+        ".css": 1,
+        ".js": 1
+    },
+    "finding_summary": {
+        "medium": 1,
+        "low": 1
+    },
+    "findings": [
+        {
+            "type": "missing_tests",
+            "severity": "medium",
+            "message": "No recognizable test or spec source files found."
+        },
+        {
+            "type": "missing_lockfile",
+            "severity": "low",
+            "message": "No recognized dependency lockfile found."
+        }
+    ],
+    "scan_limits": {
+        "max_file_size_bytes": 1048576,
+        "max_total_scan_size_bytes": 20971520,
+        "bytes_scanned": 54143
+    },
+    "ai_audit": {
+        "status": "completed",
+        "summary": "AI review completed. See the architecture review and verified findings.",
+        "architecture_review": {
+            "overview": "Frontend indicators detected: indira-bhawan-os/public/app.js: Vanilla JavaScript (document.queryselector, document.getelementbyid, addeventlistener(), HTML application entry point",
+            "entry_points": "Detected entry points:\n- indira-bhawan-os/public/app.js\n- indira-bhawan-os/public/index.html",
+            "components": "Not verified from the reviewed source files.",
+            "data_flow": "Not verified from the reviewed source files.",
+            "dependencies": "Not verified from the reviewed source files.",
+            "security": "Not verified from the reviewed source files."
+        },
+        "strengths": [],
+        "limitations": [],
+        "findings": [],
+        "files_reviewed": [
+            {
+                "path": "indira-bhawan-os/public/app.js",
+                "line_count": 32
+            },
+            {
+                "path": "indira-bhawan-os/public/index.html",
+                "line_count": 2
+            },
+            {
+                "path": "indira-bhawan-os/package.json",
+                "line_count": 19
+            },
+            {
+                "path": "indira-bhawan-os/README.md",
+                "line_count": 192
+            },
+            {
+                "path": "indira-bhawan-os/TESTING.md",
+                "line_count": 36
+            },
+            {
+                "path": "indira-bhawan-os/public/style.css",
+                "line_count": 5
+            }
+        ],
+        "files_reviewed_count": 6,
+        "evidence_policy": "AI findings are included only when their quoted source evidence matches the reviewed file and line range."
+    },
+    "ai_audit_status": "completed"
+}
